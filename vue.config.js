@@ -35,7 +35,7 @@ module.exports = {
     },
 
     // eslint-loader 是否在保存的时候检查
-    lintOnSave: true,
+    lintOnSave: process.env.NODE_ENV !== 'production',
 
     // 是否使用包含运行时编译器的Vue核心的构建
     runtimeCompiler: false,
@@ -108,6 +108,11 @@ module.exports = {
         https: false,
 
         hotOnly: false,
+        // 当出现编译器错误或警告时，在浏览器中显示
+        overlay: {
+            warnings: true,
+            errors: true
+        },
 
         proxy: {
             '/api': {

@@ -5,10 +5,10 @@
 </template>
 
 <script>
-
 export default {
     name: 'welcome',
     components: {
+
     }
 }
 </script>
