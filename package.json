@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve --open",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vue-cli-service serve",
+    "build": "yarn clean && vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "clean": "rimraf dist/*"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -31,7 +32,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,vue}": [
+    "src/**/*.{js,vue}": [
       "eslint --fix",
       "git add"
     ]

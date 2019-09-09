@@ -64,11 +64,11 @@ module.exports = {
                 cacheGroups: {}
             })
 
-        // 'src/lib' 目录下为外部库文件，不参与 eslint 检测
+        // 'src/assets' 目录下为外部库文件，不参与 eslint 检测
         config.module
             .rule('eslint')
             .exclude
-            .add('/Users/maybexia/Downloads/FE/community_built-in/src/lib')
+            .add('/Users/mac/zh/workSpace/Manage-demo-vue/src/assets')
             .end()
     },
 

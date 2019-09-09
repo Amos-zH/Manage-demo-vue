@@ -1,0 +1,38 @@
+.login {
+    background: linear-gradient(to bottom,#409eff,#259265);
+    -webkit-background-clip: padding-box;
+    height: 100%;
+    .login-box {
+        width: 400px;
+        height: 300px;
+        font-size: 18px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -150px;
+        margin-left: -200px;
+        .login-title {
+            padding: 20px 0;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+        .login-account, .login-pwd {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+        .login-btn {
+            width: 90%;
+            letter-spacing: 10px;
+            background: url('../../assets/paint.png');
+            -webkit-background-clip: padding-box;/*规定背景绘制区域*/
+            -webkit-animation-name: masked-animation;/*动画的名称*/
+            -webkit-animation-duration: 20s;/*动画完成一个周期需要的时间*/
+            -webkit-animation-iteration-count: infinite;/*动画播放次数--无限次*/
+            -webkit-animation-timing-function: linear;/*规定动画的速度曲线*/
+        }
+    }
+}
+@-webkit-keyframes masked-animation{
+    0%{ background-position: left bottom; }
+    100%{ background-position: right bottom; }
+}
