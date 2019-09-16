@@ -24,11 +24,17 @@ a,input[type="input"],input[type="button"]{ cursor: pointer; }
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #333;
-    .clearfix:after{
+    .clearfix:after {
         display: block;
         content: '.';
         height: 0;
         visibility: hidden;
         clear: both;
+    }
+    .is-invalid input {
+        border: solid 1px red;
+    }
+    pre.is-invalid {
+        color: red;
     }
 }
