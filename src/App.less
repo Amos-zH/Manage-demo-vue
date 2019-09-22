@@ -31,10 +31,19 @@ a,input[type="input"],input[type="button"]{ cursor: pointer; }
         visibility: hidden;
         clear: both;
     }
-    .is-invalid input {
-        border: solid 1px red;
-    }
-    pre.is-invalid {
-        color: red;
+    .form-item {
+        position: relative;
+        padding-bottom: 30px;
+        .is-invalid input {
+            border: solid 1px red;
+        }
+        pre.is-invalid {
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            color: red;
+            font-size: 14px;
+            line-height: 30px;
+        }
     }
 }

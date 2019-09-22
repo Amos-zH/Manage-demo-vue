@@ -17,7 +17,7 @@ alpha           只能包含英文
 alpha_dash      只能包含英文，数字，短划线或下划线
 alpha_num       只能包含英文或数字
 alpha_spaces    只能包含英文或空格
-between:{min},{max}     只能是介于min和max的数值
+between:{min},{max}     数字只能是介于min和max
 confirmed:{target}      验证字段必须与target具有相同的值
 digits:{length}         验证字段必须为数字且具有指定的位数
 dimensions:{width},{height}     添加到验证字段中的文件必须是具有指定尺寸的图像
