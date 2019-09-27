@@ -45,7 +45,7 @@
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
 
 export default {
-    name: 'welcome',
+    name: 'login',
     components: {
         ValidationProvider,
         ValidationObserver
@@ -58,7 +58,7 @@ export default {
     },
     methods: {
         login () {
-            console.log('验证通过！')
+            this.$router.push('home')
         }
     }
 }

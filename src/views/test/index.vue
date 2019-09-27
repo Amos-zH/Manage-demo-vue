@@ -1,5 +1,5 @@
 <template>
-    <div class="welcome">
+    <div class="test">
         <el-button type="primary" @click.once="enter('hello', $event)">主要按钮</el-button>
         <div>
             <router-link to="/login">Go to Login</router-link>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    name: 'welcome',
+    name: 'test',
     data () {
         return {
             fileList: []
