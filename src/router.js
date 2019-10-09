@@ -9,7 +9,7 @@ Router.prototype.push = function push (location) {
     return originalPush.call(this, location).catch(err => err)
 }
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
@@ -60,3 +60,13 @@ export default new Router({
         }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    // 当路由切换页面的时候，遍历全局数组，将上一个页面的所有请求cancel掉
+    Vue.prototype.__cancels__.forEach((cancel) => {
+        cancel()
+    })
+    Vue.prototype.__cancels__ = []
+})
+
+export default router
