@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
+Vue.prototype.__cancels__ = [] // 取消请求数组
 
 // 解决多次点击同一个路由报错
 const originalPush = Router.prototype.push
@@ -64,9 +65,11 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
     // 当路由切换页面的时候，遍历全局数组，将上一个页面的所有请求cancel掉
     Vue.prototype.__cancels__.forEach((cancel) => {
-        cancel()
+        cancel && cancel()
     })
     Vue.prototype.__cancels__ = []
+
+    next()
 })
 
 export default router

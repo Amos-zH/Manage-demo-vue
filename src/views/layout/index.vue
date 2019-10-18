@@ -31,15 +31,15 @@
                         <el-submenu v-if="item.subMenu && item.subMenu.length > 0" :key="item.menuId" :index="item.menuPath">
                             <template slot="title">
                                 <i :class="item.icon"></i>
-                                <span slot="title">{{item.menuName}}</span>
+                                <span slot="title">{{ item.menuName }}</span>
                             </template>
                             <el-menu-item v-for="childItem in item.subMenu" :key="childItem.menuId" :index="childItem.menuPath">
-                                {{childItem.menuName}}
+                                {{ childItem.menuName }}
                             </el-menu-item>
                         </el-submenu>
                         <el-menu-item v-else :key="item.menuId" :index="item.menuPath">
                             <i :class="item.icon"></i>
-                            <span slot="title">{{item.menuName}}</span>
+                            <span slot="title">{{ item.menuName }}</span>
                         </el-menu-item>
                     </template>
                 </el-menu>

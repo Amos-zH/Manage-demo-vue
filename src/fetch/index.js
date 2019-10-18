@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import axios from 'axios'
+import qs from 'qs'
+import baseurl from './baseurl'
 
 const instance = axios.create({
     // `baseURL` 将自动加在 `url` 前面
-    baseURL: 'https://some-domain.com/api/',
+    baseURL: baseurl,
     // 设置超时时间 -10秒
     timeout: 10000,
     // 请求头部信息
@@ -14,8 +16,7 @@ const instance = axios.create({
     // 后面数组中的函数必须返回一个字符串，或 ArrayBuffer，或 Stream
     transformRequest: [function (data) {
         // 对 data 进行任意转换处理
-
-        return data
+        return qs.stringify(data)
     }],
 
     // `transformResponse` 在传递给 then/catch 前，允许修改响应数据

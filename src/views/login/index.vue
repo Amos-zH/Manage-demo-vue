@@ -58,7 +58,14 @@ export default {
     },
     methods: {
         login () {
-            this.$router.push('home')
+            let params = {
+                gameId: 1,
+                channelId: 1
+            }
+            this.$apis.getLineChart(params).then(res => {
+                console.log('response: ', res.data)
+                // this.$router.push('home')
+            })
         }
     }
 }
