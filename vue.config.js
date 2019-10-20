@@ -116,21 +116,27 @@ module.exports = {
             errors: true
         },
         // 跨域代理
-        proxy: {
+        // proxy: {
             // 只有碰到/api的才会执行代理
-            '/api': {
-                target: 'http://localhost:3000', // 要访问的跨域的域名
-                ws: true, // 是否启用websockets
-                changeOrigin: true // 开启代理：在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样客户端端和服务端进行数据的交互就不会有跨域问题
-                // pathRewrite: {
-                //     '^/api': '/mock'
-                // }
-            }
-        },
+            // '/api': {
+            //     target: 'http://common.dm.com', // 要访问的跨域的域名
+            //     ws: true, // 是否启用websockets
+            //     changeOrigin: true // 开启代理：在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样客户端端和服务端进行数据的交互就不会有跨域问题
+            //     // pathRewrite: {
+            //     //     '^/api': ''
+            //     // }
+            // },
+            // '/web': {
+            //     target: 'http://testoperation.youximao.cn',
+            //     ws: true,
+            //     changeOrigin: true
+            // }
+        // },
+        // proxy: '',
         // 在服务器内部的所有其他中间件之前执行定制中间件
         before: require('./mock/index.js'),
         // 在服务器内部的所有其他中间件之后执行定制中间件
-        after: (app) => {}
+        // after: app => {}
     },
     // 构建时开启多进程处理 babel 编译
     parallel: require('os').cpus().length > 1,

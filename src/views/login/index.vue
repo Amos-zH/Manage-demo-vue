@@ -59,10 +59,10 @@ export default {
     methods: {
         login () {
             let params = {
-                gameId: 1,
-                channelId: 1
+                gameId: 1502071341417559,
+                channelId: 11
             }
-            this.$apis.getLineChart(params).then(res => {
+            this.$apis.loginPost(params).then(res => {
                 console.log('response: ', res.data)
                 // this.$router.push('home')
             })

@@ -1,4 +1,5 @@
 module.exports = app => {
+    // 使用Express中间件body-parser来解析请求体
     const bodyParser = require('body-parser')
     // 解析 application/json
     app.use(bodyParser.json())
@@ -13,7 +14,7 @@ module.exports = app => {
         ...loginMock,
         ...chartMock
     ]
-    console.log('mocks: ', mocks)
+
     for (const mock of mocks) {
         app[mock.type](mock.url, mock.res)
     }

@@ -29,6 +29,13 @@ const loginApi = {
             data
         })
     },
+    getGameInfo: data => {
+        return request({
+            url: '/web/game/getGameInfo',
+            method: 'post',
+            data
+        })
+    },
     getSignTypeAndUrl: data => {
         return request({
             url: '/api/game/getSignTypeAndUrl',
@@ -38,7 +45,7 @@ const loginApi = {
     },
     check: data => {
         return request({
-            url: '/api/health/check',
+            url: '/mock/health/check',
             method: 'post',
             data
         })
@@ -46,35 +53,3 @@ const loginApi = {
 }
 
 export default loginApi
-
-// export function login (data) {
-//     return request({
-//         url: '/test',
-//         method: 'post',
-//         data
-//     })
-// }
-
-// export function listOsTypeCommon (data) {
-//     return request({
-//         url: '/web/game/listOsTypeCommon',
-//         method: 'post',
-//         data
-//     })
-// }
-
-// export function getSignTypeAndUrl (data) {
-//     return request({
-//         url: '/api/game/getSignTypeAndUrl',
-//         method: 'post',
-//         data
-//     })
-// }
-
-// export function check (data) {
-//     return request({
-//         url: '/api/health/check',
-//         method: 'post',
-//         data
-//     })
-// }
