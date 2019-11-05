@@ -5,20 +5,13 @@ let app = express() // 实例化express
 const os = require('os')
 // 动态获取 host || 也可在package.json中配置 HOST （--host 0.0.0.0)
 let arr = []
-// let HOST
 for (let key in os.networkInterfaces()) {
-    debugger
     os.networkInterfaces()[key].forEach((item) => {
         if (item.family === 'IPv4' && item.address.indexOf('192.168.') !== -1) {
             arr.push(item.address)
         }
     })
 }
-// HOST = arr[0]
-
-// Mock.setup({
-//     timeout: 800, // 设置延迟响应，模拟向后端请求数据
-// });
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
@@ -40,6 +33,17 @@ app.use('/api/loginPost', function (req, res) {
     }))
 })
 
-app.listen('3000', () => {
-    console.log('监听端口 3000')
+const loginMock = require('./mock/login.js')
+const chartMock = require('./mock/chart.js')
+const mocks = [
+    ...loginMock,
+    ...chartMock
+]
+
+for (const mock of mocks) {
+    app[mock.type](mock.url, mock.res)
+}
+
+app.listen('3001', () => {
+    console.log('监听端口 3001')
 })

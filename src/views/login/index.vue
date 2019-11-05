@@ -52,8 +52,8 @@ export default {
     },
     data () {
         return {
-            account: '',
-            pwd: ''
+            account: 'aa',
+            pwd: '123123'
         }
     },
     methods: {
@@ -62,7 +62,7 @@ export default {
                 gameId: 1502071341417559,
                 channelId: 11
             }
-            this.$apis.loginPost(params).then(res => {
+            this.$apis.getGameInfo(params).then(res => {
                 console.log('response: ', res.data)
                 // this.$router.push('home')
             })

@@ -6,7 +6,8 @@
     "dev": "vue-cli-service serve",
     "build": "yarn clean && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist/*",
+    "mock": "node ./mockServer"
   },
   "dependencies": {
     "app-info-parser": "^0.3.3",

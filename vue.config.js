@@ -127,12 +127,12 @@ module.exports = {
             //     // }
             // },
             // '/web': {
-            //     target: 'http://testoperation.youximao.cn',
-            //     ws: true,
+            //     target: 'http://localhost:3001',
+            //     ws: false,
             //     changeOrigin: true
             // }
         // },
-        // proxy: '',
+        proxy: '',
         // 在服务器内部的所有其他中间件之前执行定制中间件
         before: require('./mock/index.js'),
         // 在服务器内部的所有其他中间件之后执行定制中间件
