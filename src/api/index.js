@@ -1,8 +1,8 @@
-import login from './login'
+import base from './base'
 import chart from './chart'
 
 const apis = {
-    ...login,
+    ...base,
     ...chart
 }
 

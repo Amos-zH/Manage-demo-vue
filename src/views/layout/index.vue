@@ -72,34 +72,14 @@
 <script>
 export default {
     name: 'layout',
+    created () {
+        this.initMenu()
+    },
     data () {
         return {
             userName: 'admin',
             // menus
-            menus: [
-                {
-                    menuId: 10,
-                    menuName: '6666666',
-                    menuPath: '666',
-                    icon: 'el-icon-setting',
-                    subMenu: [
-                        {
-                            menuId: 11,
-                            menuName: '主页',
-                            menuPath: 'home'
-                        }, {
-                            menuId: 12,
-                            menuName: '图表',
-                            menuPath: 'chart'
-                        }
-                    ]
-                }, {
-                    menuId: 20,
-                    menuName: '测试',
-                    menuPath: 'test',
-                    icon: 'el-icon-setting'
-                }
-            ],
+            menus: [],
             activeMenu: this.$route.name,
             // tabs
             activeTab: 'home',
@@ -138,6 +118,18 @@ export default {
         // 个人信息下拉按钮
         handleCommand (command) {
             this.$message('click on item ' + command)
+        },
+        // 获取菜单
+        initMenu () {
+            this.$apis.getMenus().then(res => {
+                if (res.code === '000') {
+                    this.menus = res.data
+                } else {
+                    this.$message.error(res.message)
+                }
+            }).catch(error => {
+                this.$message.error(error.message)
+            })
         },
         // 菜单切换
         changeMenu (menu, a, b) {

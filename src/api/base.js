@@ -1,16 +1,16 @@
 import request from '@/fetch'
 
-const loginApi = {
-    loginPost: data => {
+const baseApi = {
+    login: data => {
         return request({
-            url: '/api/loginPost',
+            url: '/api/login',
             method: 'post',
             data
         })
     },
-    loginGet: params => {
+    getMenus: params => {
         return request({
-            url: '/api/loginGet',
+            url: '/api/getMenus',
             method: 'get',
             params: params
         })
@@ -52,4 +52,4 @@ const loginApi = {
     }
 }
 
-export default loginApi
+export default baseApi

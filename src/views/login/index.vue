@@ -52,19 +52,26 @@ export default {
     },
     data () {
         return {
-            account: 'aa',
-            pwd: '123123'
+            account: '',
+            pwd: ''
         }
     },
     methods: {
         login () {
             let params = {
-                gameId: 1502071341417559,
-                channelId: 11
+                account: this.account,
+                pwd: this.pwd
             }
-            this.$apis.getGameInfo(params).then(res => {
-                console.log('response: ', res.data)
-                // this.$router.push('home')
+            this.$apis.login(params).then(res => {
+                if (res.code === '000') {
+                    this.$message.success('登录成功！')
+                    res.data && this.$router.push('home')
+                } else {
+                    this.$message.error(res.data.message)
+                }
+            }).catch(err => {
+                this.$message.error(err)
+                console.log('登录错误: ', err)
             })
         }
     }

@@ -8,10 +8,10 @@ module.exports = app => {
         extended: true
     }))
 
-    const loginMock = require('./login.js')
+    const baseMock = require('./base.js')
     const chartMock = require('./chart.js')
     const mocks = [
-        ...loginMock,
+        ...baseMock,
         ...chartMock
     ]
 
