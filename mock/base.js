@@ -8,7 +8,10 @@ const baseMock = [
             // console.log(req.body)
             res.json({
                 "code": "000",
-                "data": true,
+                "data": {
+                    loginStats: true,
+                    token: 'token123'
+                },
                 "message": "success"
             })
         }
@@ -50,6 +53,21 @@ const baseMock = [
     },
     {
         type: 'post',
+        url: '/api/getUserInfo',
+        res: function (req, res, next) {
+            res.json({
+                "code": "000",
+                "data": {
+                    "name": "斋藤一",
+                    "sex": 1,
+                    "age": 18
+                },
+                "message": "suc"
+            })
+        }
+    },
+    {
+        type: 'post',
         url: '/api/loginTest',
         res: function (req, res, next) {
             // console.log(req.body)
@@ -64,13 +82,6 @@ const baseMock = [
             }))
         }
     },
-    {
-        type: 'post',
-        url: '/web/game/getGameInfo',
-        res: function (req, res, next) {
-            res.json({ "data": "gettttttt" })
-        }
-    }
 ]
 
 module.exports = baseMock

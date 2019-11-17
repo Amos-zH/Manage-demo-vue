@@ -6,7 +6,7 @@
             <el-dropdown class="header-info" @command="handleCommand">
                 <span class="el-dropdown-link">
                     <img src="" alt="">
-                    <span class="header-username">{{ userName }}</span>
+                    <span class="header-username">{{ userInfo.name }}</span>
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
@@ -21,10 +21,10 @@
                 <el-menu
                     :unique-opened="true"
                     :router="true"
+                    :default-active="activeMenu"
                     text-color="#fff"
                     active-text-color="#ff9234"
                     background-color="#304156"
-                    :default-active="activeMenu"
                     @select="changeMenu"
                     >
                     <template v-for="item in menus">
@@ -70,14 +70,22 @@
 </template>
 
 <script>
+import { getToken } from '@/utils/auth'
+
 export default {
     name: 'layout',
     created () {
+        this.simpleStore = this.$simpleStore.state // 获取状态值
         this.initMenu()
+        this.getUserInfo()
     },
     data () {
         return {
-            userName: 'admin',
+            simpleStore: null,
+            userInfo: {
+                name: 'admin',
+                sex: 1
+            },
             // menus
             menus: [],
             activeMenu: this.$route.name,
@@ -124,6 +132,22 @@ export default {
             this.$apis.getMenus().then(res => {
                 if (res.code === '000') {
                     this.menus = res.data
+                } else {
+                    this.$message.error(res.message)
+                }
+            }).catch(error => {
+                this.$message.error(error.message)
+            })
+        },
+        // 获取用户信息
+        getUserInfo () {
+            let params = {
+                token: getToken()
+            }
+            this.$apis.getUserInfo(params).then(res => {
+                if (res.code === '000') {
+                    this.userInfo = res.data
+                    this.$simpleStore.setUserInfo(res.data)
                 } else {
                     this.$message.error(res.message)
                 }
