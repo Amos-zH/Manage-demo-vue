@@ -43,7 +43,6 @@
 
 <script>
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
-import { setToken } from '@/utils/auth'
 
 export default {
     name: 'login',
@@ -63,16 +62,10 @@ export default {
                 account: this.account,
                 pwd: this.pwd
             }
-            this.$apis.login(params).then(res => {
-                if (res.code === '000') {
-                    this.$message.success('登录成功！')
-                    res.data.loginStats && setToken(res.data.token)
-                    res.data.loginStats && this.$router.push('home')
-                } else {
-                    this.$message.error(res.data.message)
-                }
+            this.$store.dispatch('login', params).then((val) => {
+                this.$message.success('登录成功！')
+                val && this.$router.push('home')
             }).catch(err => {
-                this.$message.error(err)
                 console.log('登录错误: ', err)
             })
         }

@@ -70,18 +70,14 @@
 </template>
 
 <script>
-import { getToken } from '@/utils/auth'
-
 export default {
     name: 'layout',
     created () {
-        this.simpleStore = this.$simpleStore.state // 获取状态值
         this.initMenu()
         this.getUserInfo()
     },
     data () {
         return {
-            simpleStore: null,
             userInfo: {
                 name: 'admin',
                 sex: 1
@@ -141,18 +137,10 @@ export default {
         },
         // 获取用户信息
         getUserInfo () {
-            let params = {
-                token: getToken()
-            }
-            this.$apis.getUserInfo(params).then(res => {
-                if (res.code === '000') {
-                    this.userInfo = res.data
-                    this.$simpleStore.setUserInfo(res.data)
-                } else {
-                    this.$message.error(res.message)
-                }
+            this.$store.dispatch('user/getUserInfo').then(res => {
+                this.userInfo = res
             }).catch(error => {
-                this.$message.error(error.message)
+                console.log('获取用户信息出错: ', error)
             })
         },
         // 菜单切换
