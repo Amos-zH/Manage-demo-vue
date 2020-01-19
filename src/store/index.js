@@ -7,7 +7,7 @@ import user from './modules/user'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
     state: {
         token: getToken()
     },
@@ -47,3 +47,20 @@ export default new Vuex.Store({
         user
     }
 })
+
+if (module.hot) {
+    // 使 action 和 mutation 成为可热重载模块
+    module.hot.accept(['./modules/user'], () => {
+        // 获取更新后的模块
+        // 因为 babel 6 的模块编译格式问题，这里需要加上 `.default`
+        const newModuleA = require('./modules/user').default
+        // 加载新模块
+        store.hotUpdate({
+            modules: {
+                a: newModuleA
+            }
+        })
+    })
+}
+
+export default store

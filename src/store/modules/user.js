@@ -1,4 +1,4 @@
-import { SET_USER_INFO } from '../mutation-types'
+import { SET_USER_INFO, REMOVE_USER_INFO } from '../mutation-types'
 import baseApi from '@/api/base'
 
 const user = {
@@ -11,6 +11,10 @@ const user = {
         [SET_USER_INFO] (state, v) {
             const obj = state
             obj.userInfo = { ...v }
+        },
+        [REMOVE_USER_INFO] (state) {
+            const obj = state
+            obj.userInfo = {}
         }
     },
     actions: {

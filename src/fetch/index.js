@@ -3,6 +3,7 @@ import axios from 'axios'
 // import qs from 'qs'
 import baseurl from './baseurl'
 import router from '../router'
+import store from '@/store'
 import { MessageBox, Message } from 'element-ui'
 import { getToken, removeToken } from '@/utils/auth'
 
@@ -100,7 +101,7 @@ instance.interceptors.response.use(function (response) {
             }).then(() => {
                 // 去除token和用户信息
                 removeToken()
-                Vue.prototype.$simpleStore.clearUserInfo()
+                store.commit('user/REMOVE_USER_INFO')
                 // 跳转登录页
                 const route = router.history.pending || router.history.current
                 if (route.path !== '/login' || route.name !== '404') {

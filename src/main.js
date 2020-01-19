@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import './libs/vee-validate' // 引入vee-validate验证
 import store from './store' // 引入vuex
-import simpleStore from './store/simpleStore' // 引入简单状态管理
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import apis from './api' // 引入接口
@@ -15,8 +14,6 @@ Vue.use(ElementUI, { size: 'small' })
 
 // vue原型挂载 - 请求接口函数
 Vue.prototype.$apis = apis
-// vue原型挂载 - 简单的状态
-Vue.prototype.$simpleStore = simpleStore
 
 new Vue({
     router,
