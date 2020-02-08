@@ -1,0 +1,9 @@
+{
+    "code": "000",
+    "data": {
+        "name": "斋藤一",
+        "sex": 1,
+        "age": 18
+    },
+    "message": "suc"
+}

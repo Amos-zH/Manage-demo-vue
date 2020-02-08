@@ -1,5 +1,3 @@
-const Mock = require('mockjs')
-
 const chartMock = [
     {
         type: "post",

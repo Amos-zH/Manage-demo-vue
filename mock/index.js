@@ -7,8 +7,8 @@ const mockDir = path.join(process.cwd(), 'mock') // 获取文件夹路劲
 function registerRoutes(app) {
     let mockLastIndex
 
-    const baseMock = require('./base.js')
-    const chartMock = require('./chart.js')
+    const baseMock = require('./base')
+    const chartMock = require('./chart')
     const mocks = [
         ...baseMock,
         ...chartMock

@@ -1,0 +1,28 @@
+{
+    "code": "000",
+    "data": [
+        {
+            "menuId": 10,
+            "menuName": "悠然见南山",
+            "menuPath": "index",
+            "icon": "el-icon-setting",
+            "subMenu": [
+                {
+                    "menuId": 11,
+                    "menuName": "主页",
+                    "menuPath": "home"
+                }, {
+                    "menuId": 12,
+                    "menuName": "图表",
+                    "menuPath": "chart"
+                }
+            ]
+        }, {
+            "menuId": 20,
+            "menuName": "测试",
+            "menuPath": "test",
+            "icon": "el-icon-setting"
+        }
+    ],
+    "message": "success"
+}

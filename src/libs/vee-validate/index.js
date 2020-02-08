@@ -51,9 +51,27 @@ extend('required', {
     validate: value => !!value, // the validation function
     message: '{_field_}不能为空' // the error message
 })
+extend('confirmed', { // 修改内置confirmed规则支持多传一个参数表明目标字段名，错误文案也修改
+    validate (value, args) {
+        return String(value) === String(args.targetValue)
+    },
+    params: [
+        {
+            name: 'targetValue',
+            isTarget: true
+        },
+        {
+            name: 'targetName'
+        }
+    ],
+    message: (fieldName, placeholders) => {
+        let errorTxt = placeholders.targetName ? `${fieldName} 与 ${placeholders.targetName} 不一致` : `${fieldName} 不能和 ${placeholders.targetValue} 匹配`
+        return errorTxt
+    }
+})
 
 // 自定义规则
-extend('noCN', {
+extend('noCN', { // 不能包含中文
     validate: value => {
         return !/[\u4e00-\u9fa5]/.test(value)
     },

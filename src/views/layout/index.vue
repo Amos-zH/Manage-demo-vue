@@ -5,13 +5,13 @@
             <span class="header-title">管理系统</span>
             <el-dropdown class="header-info" @command="handleCommand">
                 <span class="el-dropdown-link">
-                    <img src="" alt="">
+                    <img class="head-img" :src="headImg" alt="头像">
                     <span class="header-username">{{ userInfo.name }}</span>
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item icon="el-icon-plus" command="a">修改密码</el-dropdown-item>
-                    <el-dropdown-item icon="el-icon-circle-plus" command="b">登出</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-edit" command="changePwd">修改密码</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-switch-button" command="loginOut">登出</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </el-header>
@@ -66,12 +66,20 @@
                 </el-tabs>
             </el-main>
         </el-container>
+        <dialog-change-pwd v-model="dialogChangePwdShow" />
     </el-container>
 </template>
 
 <script>
+import headImg from '@/assets/head.JPG'
+import { removeToken } from '@/utils/auth'
+import dialogChangePwd from './dialogChangePwd'
+
 export default {
     name: 'layout',
+    components: {
+        dialogChangePwd
+    },
     created () {
         this.initMenu()
         this.getUserInfo()
@@ -82,6 +90,7 @@ export default {
                 name: 'admin',
                 sex: 1
             },
+            headImg: headImg,
             // menus
             menus: [],
             activeMenu: this.$route.name,
@@ -91,7 +100,8 @@ export default {
                 title: '主页',
                 name: 'home',
                 closable: false
-            }]
+            }],
+            dialogChangePwdShow: false
         }
     },
     computed: {
@@ -121,7 +131,18 @@ export default {
     methods: {
         // 个人信息下拉按钮
         handleCommand (command) {
-            this.$message('click on item ' + command)
+            if (command === 'changePwd') {
+                // 修改密码
+                this.dialogChangePwdShow = true
+            } else if (command === 'loginOut') {
+                // 登出
+                // 去除token和用户信息
+                removeToken()
+                this.$store.commit('user/REMOVE_USER_INFO')
+                // 跳转登录页
+                this.$router.replace('/login')
+                this.$message('登出成功！')
+            }
         },
         // 获取菜单
         initMenu () {

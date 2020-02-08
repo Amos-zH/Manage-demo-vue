@@ -70,6 +70,10 @@ module.exports = {
             .exclude
             .add('/Users/mac/zh/workSpace/Manage-demo-vue/src/assets')
             .end()
+
+        config.module
+            .rule('images')
+            .test(/\.(png|jpe?g|JPG|gif|webp)(\?.*)?$/)
     },
 
     // 配置高于chainWebpack中关于 css loader 的配置
@@ -86,11 +90,11 @@ module.exports = {
         // css预设器配置项
         loaderOptions: {
             css: {
-                // options here will be passed to css-loader
+                // 这里的选项会传递给 css-loader
             },
 
             postcss: {
-                // options here will be passed to postcss-loader
+                // 这里的选项会传递给 postcss-loader
             }
         }
     },
