@@ -2,7 +2,23 @@
     <el-container class="layout">
         <!-- 头部内容 -->
         <el-header class="header">
-            <span class="header-title">管理系统</span>
+            <span class="header-box">
+                <span class="header-title">管理系统</span>
+            </span>
+            <i :class="['collapse', isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']" @click="isCollapse = !isCollapse" />
+            <el-menu
+                default-active="1"
+                class="header-menu"
+                mode="horizontal"
+                @select="handleSelect"
+                background-color="#2b2f3a"
+                text-color="#fff"
+                active-text-color="#409EFF"
+                >
+                <el-menu-item index="1">后台中心</el-menu-item>
+                <el-menu-item index="2">数据图表</el-menu-item>
+                <el-menu-item index="3" disabled><a href="https://www.baidu.com" target="_blank">外链跳转</a></el-menu-item>
+            </el-menu>
             <el-dropdown class="header-info" @command="handleCommand">
                 <span class="el-dropdown-link">
                     <img class="head-img" :src="headImg" alt="头像">
@@ -15,63 +31,73 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </el-header>
-        <el-container>
-            <!-- 侧边菜单 -->
-            <el-aside width="200px" class="aside">
-                <el-menu
-                    :unique-opened="true"
-                    :router="true"
-                    :default-active="activeMenu"
-                    text-color="#fff"
-                    active-text-color="#ff9234"
-                    background-color="#304156"
-                    @select="changeMenu"
-                    >
-                    <template v-for="item in menus">
-                        <el-submenu v-if="item.subMenu && item.subMenu.length > 0" :key="item.menuId" :index="item.menuPath">
-                            <template slot="title">
+        <el-container class="container">
+            <template v-if="activeHeader">
+                <!-- 侧边菜单 -->
+                <div class="aside">
+                    <el-menu
+                        :unique-opened="true"
+                        :router="true"
+                        :default-active="activeMenu"
+                        :collapse="isCollapse"
+                        class="aside-menu"
+                        text-color="#fff"
+                        active-text-color="#ff9234"
+                        background-color="#304156"
+                        @select="changeMenu"
+                        >
+                        <template v-for="item in menus">
+                            <el-submenu v-if="item.subMenu && item.subMenu.length > 0" :key="item.menuId" :index="item.menuPath">
+                                <template slot="title">
+                                    <i :class="item.icon"></i>
+                                    <span slot="title">{{ item.menuName }}</span>
+                                </template>
+                                <el-menu-item v-for="childItem in item.subMenu" :key="childItem.menuId" :index="childItem.menuPath">
+                                    {{ childItem.menuName }}
+                                </el-menu-item>
+                            </el-submenu>
+                            <el-menu-item v-else :key="item.menuId" :index="item.menuPath">
                                 <i :class="item.icon"></i>
                                 <span slot="title">{{ item.menuName }}</span>
-                            </template>
-                            <el-menu-item v-for="childItem in item.subMenu" :key="childItem.menuId" :index="childItem.menuPath">
-                                {{ childItem.menuName }}
                             </el-menu-item>
-                        </el-submenu>
-                        <el-menu-item v-else :key="item.menuId" :index="item.menuPath">
-                            <i :class="item.icon"></i>
-                            <span slot="title">{{ item.menuName }}</span>
-                        </el-menu-item>
-                    </template>
-                </el-menu>
-            </el-aside>
-            <!-- 主体内容 -->
-            <el-main class="main">
-                <el-tabs
-                    v-model="activeTab"
-                    type="card"
-                    @tab-click="tabClick"
-                    @tab-remove="removeTab"
-                    >
-                    <el-tab-pane
-                        v-for="(item) in tabList"
-                        :key="item.name"
-                        :label="item.title"
-                        :name="item.name"
-                        :closable="item.closable"
+                        </template>
+                    </el-menu>
+                </div>
+                <!-- 主体内容 -->
+                <el-main class="main">
+                    <el-tabs
+                        v-model="activeTab"
+                        type="card"
+                        @tab-click="tabClick"
+                        @tab-remove="removeTab"
                         >
-                        <keep-alive>
-                            <router-view :key="key" />
-                        </keep-alive>
-                    </el-tab-pane>
-                </el-tabs>
-            </el-main>
+                        <el-tab-pane
+                            v-for="(item) in tabList"
+                            :key="item.name"
+                            :label="item.title"
+                            :name="item.name"
+                            :closable="item.closable"
+                            >
+                            <keep-alive>
+                                <router-view :key="key" />
+                            </keep-alive>
+                        </el-tab-pane>
+                    </el-tabs>
+                </el-main>
+            </template>
+            <template v-if="!activeHeader">
+                <div>
+                    数据
+                </div>
+            </template>
         </el-container>
         <dialog-change-pwd v-model="dialogChangePwdShow" />
     </el-container>
 </template>
 
 <script>
-import headImg from '@/assets/head.JPG'
+import adminIcon from '@/assets/head.JPG'
+import headImg from '@/assets/pkq.jpg'
 import { removeToken } from '@/utils/auth'
 import dialogChangePwd from './dialogChangePwd'
 
@@ -90,14 +116,17 @@ export default {
                 name: 'admin',
                 sex: 1
             },
+            isCollapse: false,
             headImg: headImg,
+            adminIcon: adminIcon,
             // menus
+            activeHeader: true,
             menus: [],
             activeMenu: this.$route.name,
             // tabs
             activeTab: 'home',
             tabList: [{
-                title: '主页',
+                title: '首页',
                 name: 'home',
                 closable: false
             }],
@@ -205,6 +234,9 @@ export default {
             this.$router.push(activeName) // 路由跳转
             this.activeTab = activeName // tab切换
             this.tabList = tabs.filter(tab => tab.name !== tabName) // 重置tab栏
+        },
+        handleSelect (index, indexPath) {
+            this.activeHeader = index === '1'
         }
     }
 }

@@ -5,10 +5,26 @@
         line-height: 60px;
         background: #2b2f3a;
         padding: 0 20px;
-        .header-title {
-            font-size: 18px;
-            font-weight: bold;
+        .header-box {
+            display: inline-block;
+            width: 180px;
+            vertical-align: top;
+            height: 60px;
+            .header-title {
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+        .collapse {
             color: #fff;
+            font-size: 20px;
+            line-height: 60px;
+            margin-right: 60px;
+        }
+        .header-menu {
+            display: inline-block;
+            vertical-align: top;
         }
         .header-info {
             float: right;
@@ -26,10 +42,22 @@
             }
         }
     }
-    .aside {
-        background: #304156;
+    .container {
+        height: 100px;
+        .aside {
+            overflow: auto;
+            background: #304156;
+        }
+        .aside-menu {
+            border-right: none;
+            &:not(.el-menu--collapse) {
+                width: 200px;
+            }
+        }
+        .main {
+            height: 99%;
+        }
     }
-    .main {
-        height: 99%;
-    }
+
+
 }

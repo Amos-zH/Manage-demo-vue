@@ -2,19 +2,38 @@
     "code": "000",
     "data": [
         {
+            "menuId": 0,
+            "menuName": "首页",
+            "menuPath": "home",
+            "icon": "el-icon-setting"
+        }, {
+            "menuId": 1,
+            "menuName": "文档",
+            "menuPath": "document",
+            "icon": "el-icon-setting"
+        }, {
+            "menuId": 2,
+            "menuName": "图标",
+            "menuPath": "icon",
+            "icon": "el-icon-setting"
+        }, {
             "menuId": 10,
-            "menuName": "悠然见南山",
-            "menuPath": "index",
+            "menuName": "组件",
+            "menuPath": "components",
             "icon": "el-icon-setting",
             "subMenu": [
                 {
                     "menuId": 11,
-                    "menuName": "主页",
-                    "menuPath": "home"
+                    "menuName": "富文本",
+                    "menuPath": "richText"
                 }, {
                     "menuId": 12,
-                    "menuName": "图表",
-                    "menuPath": "chart"
+                    "menuName": "Markdown",
+                    "menuPath": "markdown"
+                }, {
+                    "menuId": 13,
+                    "menuName": "上传",
+                    "menuPath": "upload"
                 }
             ]
         }, {

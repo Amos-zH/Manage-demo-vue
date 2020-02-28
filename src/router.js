@@ -42,14 +42,42 @@ const router = new Router({
                 name: 'home',
                 component: () => import(/* webpackChunkName: "home" */ '@/views/home/index'),
                 meta: {
-                    title: '主页'
+                    title: '首页'
                 }
             }, {
-                path: '/chart',
-                name: 'chart',
-                component: () => import(/* webpackChunkName: "chart" */ '@/views/chart/index'),
+                path: '/document',
+                name: 'document',
+                component: () => import(/* webpackChunkName: "document" */ '@/views/document/index'),
                 meta: {
-                    title: '图表'
+                    title: '文档'
+                }
+            }, {
+                path: '/icon',
+                name: 'icon',
+                component: () => import(/* webpackChunkName: "icon" */ '@/views/icon/index'),
+                meta: {
+                    title: '图标'
+                }
+            }, {
+                path: '/richText',
+                name: 'richText',
+                component: () => import(/* webpackChunkName: "richText" */ '@/views/richText/index'),
+                meta: {
+                    title: '富文本'
+                }
+            }, {
+                path: '/markdown',
+                name: 'markdown',
+                component: () => import(/* webpackChunkName: "markdown" */ '@/views/markdown/index'),
+                meta: {
+                    title: 'Markdown'
+                }
+            }, {
+                path: '/upload',
+                name: 'upload',
+                component: () => import(/* webpackChunkName: "upload" */ '@/views/upload/index'),
+                meta: {
+                    title: '上传'
                 }
             }, {
                 path: '/test',
