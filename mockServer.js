@@ -1,11 +1,11 @@
-let express = require('express') // 引入express
-let Mock = require('mockjs') // 引入mock
+const express = require('express') // 引入express
+const Mock = require('mockjs') // 引入mock
 
-let app = express() // 实例化express
+const app = express() // 实例化express
 const os = require('os')
 // 动态获取 host || 也可在package.json中配置 HOST （--host 0.0.0.0)
-let arr = []
-for (let key in os.networkInterfaces()) {
+const arr = []
+for (const key in os.networkInterfaces()) {
     os.networkInterfaces()[key].forEach((item) => {
         if (item.family === 'IPv4' && item.address.indexOf('192.168.') !== -1) {
             arr.push(item.address)
@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
 
 app.use('/api/loginPost', function (req, res) {
     res.json(Mock.mock({
-        'status': 200,
+        status: 200,
         'data|1-9': [{
             'key|+1': 1,
             'mockTitle|1': ['肆无忌惮'],

@@ -1,7 +1,7 @@
 // 配置不同的环境访问不同的后端服务
 const config = {
     // 通过跨域代理来调用接口
-    'localhost': {
+    localhost: {
         baseurl: '/'
     }
     // 调用easy-mock的接口

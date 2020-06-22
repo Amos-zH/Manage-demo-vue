@@ -10,17 +10,17 @@ export const isObjectValueEqual = (a, b) => {
         return true
     } else if ((a instanceof Object && a != null) && (b instanceof Object && b != null)) { // 判断是对象且不是null
         // 获取对象的可枚举属性。这里没有考虑obj里有NaN、Infinity和-Infinity的情况
-        let aEnumerable = JSON.parse(JSON.stringify(a))
-        let bEnumerable = JSON.parse(JSON.stringify(b))
+        const aEnumerable = JSON.parse(JSON.stringify(a))
+        const bEnumerable = JSON.parse(JSON.stringify(b))
         // 获取对象的所有自身属性的属性名
-        let aProps = Object.getOwnPropertyNames(aEnumerable)
-        let bProps = Object.getOwnPropertyNames(bEnumerable)
+        const aProps = Object.getOwnPropertyNames(aEnumerable)
+        const bProps = Object.getOwnPropertyNames(bEnumerable)
         if (aProps.length !== bProps.length) {
             return false
         }
         // 这里没有考虑递归对象的情况
         for (let i = 0; i < aProps.length; i++) {
-            let propName = aProps[i]
+            const propName = aProps[i]
             let aValue = a[propName]
             let bValue = b[propName]
             // 用来区分类似字符串'7'与‘7.0’为同一值

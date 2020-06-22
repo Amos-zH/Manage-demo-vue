@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { SET_TOKEN, REMOVE_TOKEN } from './mutation-types'
-import { getToken, setToken } from '@/utils/auth'
-import baseApi from '@/api/base'
+import { getToken, setToken } from '@utils/auth'
+import baseApi from '@/api/modules/base'
 import user from './modules/user'
 
 Vue.use(Vuex)

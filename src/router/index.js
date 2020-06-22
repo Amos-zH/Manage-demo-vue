@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import routes from './routes'
-import { getToken } from './utils/auth'
+import { getToken } from '@utils/auth'
 
 Vue.use(Router)
 Vue.prototype.__cancels__ = [] // 取消请求数组

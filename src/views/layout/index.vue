@@ -142,7 +142,7 @@ export default {
     beforeRouteEnter (to, from, next) {
         next(vm => {
             // 通过 `vm` 访问组件实例, 不能使用this
-            let obj = vm.tabList.find((item) => {
+            const obj = vm.tabList.find((item) => {
                 return item.name === to.name
             })
             if (!obj) {
@@ -196,7 +196,7 @@ export default {
         // 菜单切换
         changeMenu (menu, a, b) {
             this.activeMenu = menu
-            let obj = this.tabList.find((item) => {
+            const obj = this.tabList.find((item) => {
                 return item.name === menu
             })
             if (!obj) {
@@ -217,13 +217,13 @@ export default {
         },
         // tab栏移除
         removeTab (tabName) {
-            let tabs = this.tabList
+            const tabs = this.tabList
             let activeName = this.activeTab
             // 获取删除后接下来要跳转的tab
             if (activeName === tabName) {
                 tabs.forEach((tab, index) => {
                     if (tab.name === tabName) {
-                        let nextTab = tabs[index + 1] || tabs[index - 1]
+                        const nextTab = tabs[index + 1] || tabs[index - 1]
                         if (nextTab) {
                             activeName = nextTab.name
                         }

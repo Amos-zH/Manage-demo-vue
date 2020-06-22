@@ -21,7 +21,7 @@ const instance = axios.create({
     transformRequest: [function (data, headers) {
         // 对传参 data 进行任意转换处理
         let ret = ''
-        for (let it in data) {
+        for (const it in data) {
             // 去除空字符串，undefined，null的请求字段
             if (data[it] || data[it] === 0 || data[it] === false) {
                 if (ret !== '') ret += '&'
@@ -69,7 +69,7 @@ instance.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
     // 在每个请求头里面塞入token
     if (getToken()) {
-        config.headers['Token'] = getToken()
+        config.headers.Token = getToken()
     }
     // 在请求拦截器中为每一个请求添加cancelToken，并将cancel方法存入全局数组中保存
     config.cancelToken = new CancelToken((c) => {

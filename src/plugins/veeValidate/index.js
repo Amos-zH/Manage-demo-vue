@@ -37,7 +37,7 @@ required        验证字段必须具有非空值，这些空值：空字符串�
 required_if     仅当目标字段（第一个参数）设置为指定值之一（其他参数）时，验证字段才必须具有非空值
 size            添加到验证字段的文件大小不得超过指定的大小（以KB为单位）
 */
-for (let rule in rules) {
+for (const rule in rules) {
     extend(rule, {
         ...rules[rule], // add the rule
         message: cn.messages[rule] // add its message
@@ -65,7 +65,7 @@ extend('confirmed', { // 修改内置confirmed规则支持多传一个参数表�
         }
     ],
     message: (fieldName, placeholders) => {
-        let errorTxt = placeholders.targetName ? `${fieldName} 与 ${placeholders.targetName} 不一致` : `${fieldName} 不能和 ${placeholders.targetValue} 匹配`
+        const errorTxt = placeholders.targetName ? `${fieldName} 与 ${placeholders.targetName} 不一致` : `${fieldName} 不能和 ${placeholders.targetValue} 匹配`
         return errorTxt
     }
 })

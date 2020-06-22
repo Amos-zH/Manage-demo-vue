@@ -58,7 +58,7 @@ export default {
     },
     methods: {
         login () {
-            let params = {
+            const params = {
                 account: this.account,
                 pwd: this.pwd
             }
@@ -74,5 +74,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import './login.less';
+@import './index.less';
 </style>

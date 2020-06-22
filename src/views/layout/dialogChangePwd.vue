@@ -84,7 +84,7 @@ export default {
     },
     methods: {
         onSubmit () {
-            let params = {
+            const params = {
                 ...this.pwdForm
             }
             this.$apis.changePwd(params).then(res => {

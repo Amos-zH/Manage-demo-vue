@@ -131,6 +131,10 @@ module.exports = {
     // （中文文档）https://github.com/Yatoo2018/webpack-chain/tree/zh-cmn-Hans
     chainWebpack: (config) => {
         config.module
+            .rule('images')
+            .test(/\.(png|jpe?g|JPG|gif|webp)(\?.*)?$/)
+            .end()
+        config.module
             .rule('svg')
             .exclude.add(resolve('src/assets/svgIcons'))
             .end()
@@ -195,14 +199,16 @@ module.exports = {
                 config => config.devtool('cheap-module-eval-source-map')
             )
 
-        // config
-            // .plugin('html-index')
-            // .tap(args => {
+        config
+            .plugin('html-index')
+            .tap(args => {
+                args[0].baseUrl = '/'
+                args[0].static = 'static'
                 // html中添加cdn，生产环境或本地需要cdn时，才注入cdn
                 // if (isProduction || devNeedCdn) args[0].cdn = cdn
-                // return args
-            // })
-            // .end()
+                return args
+            })
+            .end()
 
         config
             .when(process.env.NODE_ENV !== 'development',
@@ -411,7 +417,7 @@ module.exports = {
         // },
         proxy: '',
         // 在服务器内部的所有其他中间件之前执行定制中间件
-        before: require('./mock/index.js'),
+        before: require('./mock/index.js')
         // 在服务器内部的所有其他中间件之后执行定制中间件
         // after: app => {}
     },

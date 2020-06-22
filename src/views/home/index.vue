@@ -9,7 +9,7 @@ export default {
     name: 'home',
     methods: {
         test () {
-            let params = {
+            const params = {
                 str: '131',
                 num: 11,
                 sa: []

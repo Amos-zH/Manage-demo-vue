@@ -18,15 +18,15 @@ module.exports = {
         // 保持与 webpack.DllPlugin 中名称一致
         library: '[name]_[hash]'
     },
-    optimization:{
-        minimizer:[
+    optimization: {
+        minimizer: [
             new UglifyJsPlugin({
                 uglifyOptions: {
                     warnings: false,
                     compress: {
                         reduce_vars: true, // 把使用多次的静态值自动定义为变量
                         drop_console: true, // 删除所有的console语句
-                        pure_funcs: ["console.log"] //移除consol
+                        pure_funcs: ['console.log'] // 移除consol
                     },
                     output: {
                         // 不保留注释

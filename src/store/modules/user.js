@@ -1,5 +1,5 @@
 import { SET_USER_INFO, REMOVE_USER_INFO } from '../mutation-types'
-import baseApi from '@/api/base'
+import baseApi from '@/api/modules/base'
 
 const user = {
     namespaced: true,
