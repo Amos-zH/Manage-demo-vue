@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/侧边导航栏/nav_ic_pack_nor@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/侧边导航栏/nav_ic_pack_nor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(1.500000, 2.500000)" fill="#8AA4D1">
+            <rect id="矩形备份" transform="translate(8.500000, 13.500000) rotate(90.000000) translate(-8.500000, -13.500000) " x="7.5" y="5" width="2" height="17" rx="1"></rect>
+            <rect id="矩形备份-2" transform="translate(11.000000, 7.500000) rotate(90.000000) translate(-11.000000, -7.500000) " x="10" y="1.5" width="2" height="12" rx="1"></rect>
+            <rect id="矩形备份-3" transform="translate(8.500000, 1.500000) rotate(90.000000) translate(-8.500000, -1.500000) " x="7.5" y="-7" width="2" height="17" rx="1"></rect>
+            <path d="M0.533333333,7.1 L3.2,5.1 C3.4209139,4.93431458 3.73431458,4.9790861 3.9,5.2 C3.96491106,5.28654809 4,5.39181489 4,5.5 L4,9.5 C4,9.77614237 3.77614237,10 3.5,10 C3.39181489,10 3.28654809,9.96491106 3.2,9.9 L0.533333333,7.9 C0.312419433,7.73431458 0.267647908,7.4209139 0.433333333,7.2 C0.461760458,7.16209717 0.4954305,7.12842712 0.533333333,7.1 Z" id="路径" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

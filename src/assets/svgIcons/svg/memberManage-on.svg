@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/侧边导航栏/选中/leftBar_ic_staff_sel@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/侧边导航栏/选中/leftBar_ic_staff_sel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-2" transform="translate(1.500000, 1.000000)">
+            <rect id="矩形" fill="#2A6AFF" x="0" y="0" width="17" height="18" rx="2"></rect>
+            <g id="编组" transform="translate(5.500000, 3.000000)" fill="#C8E0FF" fill-rule="nonzero" stroke="#C8E0FF" stroke-width="2">
+                <path d="M3,1 C2.45046082,1 1.95511088,1.23584872 1.60030621,1.63852387 C1.21754798,2.07292407 1,2.68832414 1,3.4047619 C1,3.98694684 1.22652143,4.51539269 1.59680391,4.89743017 C1.95591504,5.26794166 2.45121186,5.5 3,5.5 C3.54953918,5.5 4.04488912,5.26415128 4.39969379,4.86147613 C4.78245202,4.42707593 5,3.81167586 5,3.0952381 C5,2.51305316 4.77347857,1.98460731 4.40319609,1.60256983 C4.04408496,1.23205834 3.54878814,1 3,1 Z" id="路径"></path>
+            </g>
+            <path d="M8.5,10 C10.9188915,10 12.9366008,11.7176654 13.3999437,13.999812 L3.60005628,13.999812 C4.06339924,11.7176654 6.0811085,10 8.5,10 Z" id="形状结合" fill="#C8E0FF"></path>
+        </g>
+    </g>
+</svg>

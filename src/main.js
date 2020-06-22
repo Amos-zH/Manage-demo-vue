@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './libs/vee-validate' // 引入vee-validate验证
 import store from './store' // 引入vuex
+import './assets/less/theme/index.css' // 主题配色
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import './assets/less/index.less'
+import '@/assets/icons' // svg icon文件
+import './plugins/veeValidate' // 引入vee-validate验证
+// import 'element-ui/lib/theme-chalk/index.css'
 import apis from './api' // 引入接口
 
 Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示

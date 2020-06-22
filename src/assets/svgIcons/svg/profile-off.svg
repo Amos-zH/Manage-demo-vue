@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/侧边导航栏/未选中/leftBar_ic_personal_nor@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/侧边导航栏/未选中/leftBar_ic_personal_nor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(2.000000, 1.000000)" stroke="#8AA4D1" stroke-width="2">
+            <path d="M8.25,1 C7.34695332,1 6.53071717,1.37536115 5.94691399,2.02294115 C5.35017677,2.68486814 5,3.6198033 5,4.71428571 C5,5.62247901 5.36450163,6.44517497 5.9549355,7.04057046 C6.5422969,7.63286767 7.35350707,8 8.25,8 C9.15304668,8 9.96928283,7.62463885 10.553086,6.97705885 C11.1498232,6.31513186 11.5,5.3801967 11.5,4.28571429 C11.5,3.37752099 11.1354984,2.55482503 10.5450645,1.95942954 C9.9577031,1.36713233 9.14649293,1 8.25,1 Z" id="路径" fill-rule="nonzero"></path>
+            <path d="M16,17 C15.1082172,13.2667322 11.864586,10.5 7.99972556,10.5 C4.13565764,10.5 0.892564168,13.2655977 0,16.9977036" id="路径" opacity="0.5" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>

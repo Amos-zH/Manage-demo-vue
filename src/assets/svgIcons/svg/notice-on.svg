@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/侧边导航栏/选中/leftBar_ic_notice_sel@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/侧边导航栏/选中/leftBar_ic_notice_sel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(2.000000, 2.000000)">
+            <rect id="矩形" stroke="#2A6AFF" stroke-width="2" fill="#2A6AFF" x="0" y="4" width="16" height="12" rx="2"></rect>
+            <rect id="矩形备份" fill="#C8E0FF" x="3" y="7" width="4" height="2" rx="1"></rect>
+            <rect id="矩形备份-2" fill="#C8E0FF" x="3" y="11" width="7" height="2" rx="1"></rect>
+            <path d="M4,4 L7.11755369,0.435138661 C7.62493879,-0.14504622 8.37506121,-0.14504622 8.88244631,0.435138661 L12,4" id="路径" stroke="#2A6AFF" stroke-width="2" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>

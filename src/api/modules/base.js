@@ -1,4 +1,4 @@
-import request from '@/fetch'
+import request from '../fetch'
 
 const baseApi = {
     // 登录

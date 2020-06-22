@@ -1,4 +1,4 @@
-import request from '@/fetch'
+import request from '../fetch'
 
 const chartApi = {
     getPieChart: data => {

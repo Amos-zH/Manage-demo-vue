@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="98px" height="32px" viewBox="0 0 98 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>zhifubao_ic_selected@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="结算中心" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="喵点充值/喵点充值（初始状态）" transform="translate(-774.000000, -390.000000)">
+            <g id="编组-4" transform="translate(646.000000, 220.000000)">
+                <g id="输入框/带标题" transform="translate(32.000000, 170.000000)">
+                    <g id="zhifubao_ic_selected" transform="translate(96.000000, 0.000000)">
+                        <g id="ic_selected">
+                            <g id="编组-7">
+                                <rect id="矩形" stroke="#2A6AFF" x="0.5" y="0.5" width="97" height="31" rx="2"></rect>
+                                <g id="ic_selected" transform="translate(76.000000, 14.000000)">
+                                    <path d="M22,0 L22,16 C22,17.1045695 21.1045695,18 20,18 L0,18 L0,18 L22,0 Z" id="矩形" fill="#2A6AFF"></path>
+                                    <g id="对号" transform="translate(11.000000, 7.000000)" fill-rule="nonzero">
+                                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="10" height="10"></rect>
+                                        <path d="M3.71428571,7.82857143 C3.57938743,7.82438472 3.45136729,7.76805585 3.35714286,7.67142857 L1.225,5.55 C1.02226015,5.33971817 1.02226015,5.00671041 1.225,4.79642857 C1.32422573,4.69653924 1.45920361,4.64036588 1.6,4.64036588 C1.74079639,4.64036588 1.87577427,4.69653924 1.975,4.79642857 L3.71428571,6.54642857 L8.15714286,2.65714286 C8.25527266,2.55656804 8.38984112,2.49985555 8.53035714,2.49985555 C8.67087317,2.49985555 8.80544162,2.55656804 8.90357143,2.65714286 C9.00346076,2.75636859 9.05963412,2.89134647 9.05963412,3.03214286 C9.05963412,3.17293925 9.00346076,3.30791713 8.90357143,3.40714286 L4.08928571,7.67142857 C3.99001357,7.7713815 3.85515829,7.82789228 3.71428571,7.82857143 Z" id="路径" fill="#FFFFFF"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <text id="支付宝" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" line-spacing="14" fill="#505F7B">
+                            <tspan x="28" y="24">支付宝</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

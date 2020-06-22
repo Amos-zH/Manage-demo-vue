@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/线性/miaodian_ic_hidden@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/线性/miaodian_ic_hidden" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(-0.500000, 5.000000)">
+            <path d="M1,0 L1.14833333,0.24290657 C2.37833333,2.35432526 5.29833333,4.5 8.5,4.5 C11.7016667,4.5 14.6216667,2.3535467 15.8583333,0.241738755 L16,0.000389267274" id="路径" stroke="#97A1B2" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero"></path>
+            <rect id="矩形" fill="#97A1B2" transform="translate(11.000000, 5.500000) rotate(-15.000000) translate(-11.000000, -5.500000) " x="10.5" y="4" width="1" height="3" rx="0.5"></rect>
+            <rect id="矩形备份" fill="#97A1B2" transform="translate(6.000000, 5.500000) rotate(15.000000) translate(-6.000000, -5.500000) " x="5.5" y="4" width="1" height="3" rx="0.5"></rect>
+            <rect id="矩形备份-2" fill="#97A1B2" transform="translate(2.000000, 3.500000) rotate(45.000000) translate(-2.000000, -3.500000) " x="1.5" y="2" width="1" height="3" rx="0.5"></rect>
+            <rect id="矩形备份-3" fill="#97A1B2" transform="translate(15.000000, 3.500000) rotate(-45.000000) translate(-15.000000, -3.500000) " x="14.5" y="2" width="1" height="3" rx="0.5"></rect>
+        </g>
+    </g>
+</svg>

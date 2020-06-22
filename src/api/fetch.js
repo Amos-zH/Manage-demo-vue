@@ -2,7 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 // import qs from 'qs'
 import baseurl from './baseurl'
-import router from '../router'
+import router from '@/router'
 import store from '@/store'
 import { MessageBox, Message } from 'element-ui'
 import { getToken, removeToken } from '@/utils/auth'
@@ -44,7 +44,7 @@ const instance = axios.create({
     }],
 
     // `withCredentials` 表示跨域请求时是否需要使用凭证（cookie）
-    withCredentials: false, // 默认的
+    withCredentials: process.env.NODE_ENV === 'production', // 默认 false
 
     // `responseType` 表示服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
     responseType: 'json', // 默认的

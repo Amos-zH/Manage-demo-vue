@@ -34,6 +34,6 @@ module.exports = {
     sourceType: 'module'
   },
   globals: { // 声明在代码中自定义的全局变量
-    $jsBridge: true
+    // $jsBridge: true
   }
 }

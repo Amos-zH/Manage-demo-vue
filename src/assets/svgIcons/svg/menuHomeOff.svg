@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/侧边导航栏/未选中/leftBar_ic_home_nor@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/侧边导航栏/未选中/leftBar_ic_home_nor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(1.500000, 1.000000)" fill-rule="nonzero" stroke="#8AA4D1">
+            <path d="M8.3959756,1.14083999 L1,6.3465052 L1,17 L16,17 L16,6.34927938 L8.3959756,1.14083999 Z" id="路径" stroke-width="2"></path>
+            <path d="M8.45118369,13.9711596 C7.48946494,13.9711596 6.52993369,13.6639721 5.72977744,13.0513158 C5.47274619,12.8544408 5.42399619,12.4866283 5.62087119,12.2295971 C5.81774619,11.9727221 6.18555869,11.9241283 6.44258994,12.1206908 C7.62321494,13.0249096 9.27462119,13.0277221 10.4586837,12.1281908 C10.7164962,11.9325658 11.0889962,11.9781908 11.2849337,12.2349096 C11.4810274,12.4919408 11.4379024,12.8545971 11.1813399,13.0513158 C10.3738399,13.6649096 9.41149619,13.9711596 8.45118369,13.9711596 Z" id="路径" stroke-width="0.7" fill="#8AA4D1" opacity="0.5"></path>
+        </g>
+    </g>
+</svg>

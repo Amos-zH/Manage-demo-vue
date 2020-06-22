@@ -96,8 +96,8 @@
 </template>
 
 <script>
-import adminIcon from '@/assets/head.JPG'
-import headImg from '@/assets/pkq.jpg'
+import adminIcon from '@image/head.JPG'
+import headImg from '@image/pkq.jpg'
 import { removeToken } from '@/utils/auth'
 import dialogChangePwd from './dialogChangePwd'
 

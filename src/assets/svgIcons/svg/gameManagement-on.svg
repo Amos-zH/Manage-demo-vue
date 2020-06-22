@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/侧边导航栏/选中/leftBar_ic_game_sel@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/侧边导航栏/选中/leftBar_ic_game_sel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(2.000000, 2.000000)" stroke-width="2">
+            <rect id="矩形" stroke="#2A6AFF" fill="#2A6AFF" x="1" y="1" width="5" height="5" rx="1"></rect>
+            <rect id="矩形备份" stroke="#C8E0FF" fill="#C8E0FF" x="10" y="1" width="5" height="5" rx="1"></rect>
+            <rect id="矩形备份-3" stroke="#2A6AFF" fill="#2A6AFF" x="1" y="10" width="5" height="5" rx="1"></rect>
+            <rect id="矩形备份-2" stroke="#2A6AFF" fill="#2A6AFF" x="10" y="10" width="5" height="5" rx="1"></rect>
+        </g>
+    </g>
+</svg>

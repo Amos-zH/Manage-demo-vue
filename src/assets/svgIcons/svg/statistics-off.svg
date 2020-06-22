@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>图标/侧边导航栏/未选中/leftBar_ic_stat_nor@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="图标/侧边导航栏/未选中/leftBar_ic_stat_nor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(2.000000, 2.000000)" stroke="#8AA4D1" stroke-width="2">
+            <path d="M1.01138235,8.9167371 C1.01263488,8.93960742 1.01398988,8.96245046 1.0154469,8.98526575 C1.2655263,12.9012458 4.52088674,16 8.5,16 C12.6421356,16 16,12.6421356 16,8.5 C16,4.52415225 12.9063298,1.27086988 8.99490517,1.01606866 C8.95719916,1.01361238 8.91941716,1.01143475 8.88156121,1.00953781" id="路径"></path>
+            <path d="M8,8 C8,2.66666667 8,0 8,0 C3.581722,0 0,3.581722 0,8 C0.761904762,8 3.42857143,8 8,8 Z" id="椭圆形备份" opacity="0.5"></path>
+        </g>
+    </g>
+</svg>

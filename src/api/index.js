@@ -1,5 +1,5 @@
-import base from './base'
-import chart from './chart'
+import base from './modules/base'
+import chart from './modules/chart'
 
 const apis = {
     ...base,
