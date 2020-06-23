@@ -36,11 +36,11 @@ const routes = [
                 title: '文档'
             }
         }, {
-            path: '/icon',
-            name: 'icon',
-            component: () => import(/* webpackChunkName: "icon" */ '@/views/icon/index'),
+            path: '/svgIcons',
+            name: 'svgIcons',
+            component: () => import(/* webpackChunkName: "svgIcons" */ '@/views/svgIcons/index'),
             meta: {
-                title: '图标'
+                title: 'svg图标'
             }
         }, {
             path: '/richText',

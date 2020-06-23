@@ -15,7 +15,14 @@
             "menuId": 2,
             "menuName": "图标",
             "menuPath": "icon",
-            "icon": "el-icon-setting"
+            "icon": "el-icon-setting",
+            "subMenu": [
+                {
+                    "menuId": 21,
+                    "menuName": "svg图标库",
+                    "menuPath": "svgIcons"
+                }
+            ]
         }, {
             "menuId": 10,
             "menuName": "组件",

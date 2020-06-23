@@ -23,7 +23,7 @@
                 <span class="el-dropdown-link">
                     <img class="head-img" :src="headImg" alt="头像">
                     <span class="header-username">{{ userInfo.name }}</span>
-                    <i class="el-icon-arrow-down el-icon--right"></i>
+                    <i class="el-icon-arrow-down el-icon--right" />
                 </span>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item icon="el-icon-edit" command="changePwd">修改密码</el-dropdown-item>
@@ -49,7 +49,7 @@
                         <template v-for="item in menus">
                             <el-submenu v-if="item.subMenu && item.subMenu.length > 0" :key="item.menuId" :index="item.menuPath">
                                 <template slot="title">
-                                    <i :class="item.icon"></i>
+                                    <i :class="item.icon" />
                                     <span slot="title">{{ item.menuName }}</span>
                                 </template>
                                 <el-menu-item v-for="childItem in item.subMenu" :key="childItem.menuId" :index="childItem.menuPath">
@@ -57,7 +57,7 @@
                                 </el-menu-item>
                             </el-submenu>
                             <el-menu-item v-else :key="item.menuId" :index="item.menuPath">
-                                <i :class="item.icon"></i>
+                                <i :class="item.icon" />
                                 <span slot="title">{{ item.menuName }}</span>
                             </el-menu-item>
                         </template>
