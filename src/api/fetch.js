@@ -5,7 +5,7 @@ import baseurl from './baseurl'
 import router from '@/router'
 import store from '@/store'
 import { MessageBox, Message } from 'element-ui'
-import { getToken, removeToken } from '@/utils/auth'
+// import { getToken, removeToken } from '@/utils/auth'
 
 const instance = axios.create({
     // `baseURL` 将自动加在 `url` 前面
@@ -67,10 +67,19 @@ const CancelToken = axios.CancelToken
 // 添加请求拦截器
 instance.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
-    // 在每个请求头里面塞入token
-    if (getToken()) {
-        config.headers.Token = getToken()
+    // 判断用户是否关闭了 cookie
+    if (!navigator.cookieEnabled) {
+        // console.log('浏览器不支持 cookie，或者用户禁用了 cookie！')
+        // alert('浏览器不支持 cookie，或者用户禁用了 cookie！')
+    } else {
+        if (store.getters.getToken || sessionStorage['h-token']) {
+            // 在每个请求头里面塞入token
+            config.headers['h-token'] = store.getters.getToken || sessionStorage['h-token']
+        }
     }
+    // if (getToken()) {
+    //     config.headers.Token = getToken()
+    // }
     // 在请求拦截器中为每一个请求添加cancelToken，并将cancel方法存入全局数组中保存
     config.cancelToken = new CancelToken((c) => {
         Vue.prototype.__cancels__.push(c)
@@ -85,6 +94,16 @@ instance.interceptors.request.use(function (config) {
 // 添加响应拦截器
 instance.interceptors.response.use(function (response) {
     // 对响应数据做点什么
+    if (!navigator.cookieEnabled) {
+        console.log('浏览器不支持 cookie，或者用户禁用了 cookie！')
+        alert('浏览器不支持 cookie，或者用户禁用了 cookie！')
+        return false
+    } else {
+        if (response.headers['h-token']) {
+            sessionStorage['h-token'] = response.headers['h-token']
+            store.commit('SET_TOKEN', response.headers['h-token'])
+        }
+    }
     const res = response.data
     if (res.code !== '000') {
         Message({
@@ -100,7 +119,7 @@ instance.interceptors.response.use(function (response) {
                 type: 'warning'
             }).then(() => {
                 // 去除token和用户信息
-                removeToken()
+                // removeToken()
                 store.commit('user/REMOVE_USER_INFO')
                 // 跳转登录页
                 const route = router.history.pending || router.history.current
@@ -114,7 +133,6 @@ instance.interceptors.response.use(function (response) {
         return response.data
     }
 }, function (error) {
-    console.log('err' + error)
     // 对响应错误做点什么
     Message({
         message: error.message,

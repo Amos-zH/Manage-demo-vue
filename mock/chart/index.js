@@ -4,11 +4,7 @@ const chartMock = [
         url: "/web/getPieChart",
         res: function (req, res, next) {
             console.log(req.body)
-            res.json({
-                "code": "000",
-                "data": "111111",
-                "message": "errorsssss"
-            })
+            res.json(require('./getPieChart.json'))
         }
     },
     {

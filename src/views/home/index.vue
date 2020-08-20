@@ -10,16 +10,14 @@ export default {
     methods: {
         test () {
             const params = {
-                str: '131',
-                num: 11,
+                str: false,
+                num: 0,
                 sa: []
             }
             this.$apis.getPieChart(params).then((res) => {
                 if (res.code === '000') {
                     console.log(res.data)
                 }
-            }).catch((err) => {
-                console.log('err: ', err)
             })
         }
     }

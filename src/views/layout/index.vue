@@ -34,13 +34,13 @@
         <el-container class="container">
             <template v-if="activeHeader">
                 <!-- 侧边菜单 -->
-                <div class="aside">
+                <el-aside class="aside" :width="isCollapse ? '64px' : '200px'">
                     <el-menu
+                        class="aside-menu"
                         :unique-opened="true"
                         :router="true"
                         :default-active="activeMenu"
                         :collapse="isCollapse"
-                        class="aside-menu"
                         text-color="#fff"
                         active-text-color="#ff9234"
                         background-color="#304156"
@@ -62,7 +62,7 @@
                             </el-menu-item>
                         </template>
                     </el-menu>
-                </div>
+                </el-aside>
                 <!-- 主体内容 -->
                 <el-main class="main">
                     <el-tabs

@@ -12,6 +12,7 @@
                         autofocus
                         clearable
                         prefix-icon="el-icon-user-solid"
+                        @keyup.enter.native="login"
                     />
                     <pre :class="classes">{{ errors[0] }}</pre>
                 </ValidationProvider>
@@ -25,6 +26,7 @@
                         show-password
                         clearable
                         prefix-icon="el-icon-lock"
+                        @keyup.enter.native="login"
                     />
                     <pre :class="classes">{{ errors[0] }}</pre>
                 </ValidationProvider>
@@ -45,7 +47,7 @@
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
 
 export default {
-    name: 'login',
+    name: 'Login',
     components: {
         ValidationProvider,
         ValidationObserver

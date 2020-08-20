@@ -35,7 +35,7 @@ router.beforeEach((to, from, next) => {
             // 跳转其他页的话，判断是否有用户信息
             next()
             if (!window.sessionStorage.getItem('userInfo')) {
-                console.log('如果没有用户信息，获取用户信息和菜单')
+                // console.log('如果没有用户信息，获取用户信息和菜单')
             }
         }
     } else {
