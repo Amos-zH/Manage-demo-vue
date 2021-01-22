@@ -4,6 +4,7 @@ import { SET_TOKEN, REMOVE_TOKEN } from './mutation-types'
 import { getToken, setToken } from '@utils/auth'
 import baseApi from '@/api/modules/base'
 import user from './modules/user'
+import route from './modules/routeAuth'
 
 Vue.use(Vuex)
 
@@ -25,6 +26,7 @@ const store = new Vuex.Store({
         }
     },
     actions: {
+        // 登录
         login ({ commit }, params) {
             const { account, pwd } = params
             return new Promise((resolve, reject) => {
@@ -44,7 +46,8 @@ const store = new Vuex.Store({
         }
     },
     modules: {
-        user
+        user,
+        route
     }
 })
 

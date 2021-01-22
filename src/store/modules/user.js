@@ -4,9 +4,13 @@ import baseApi from '@/api/modules/base'
 const user = {
     namespaced: true,
     state: {
-        userInfo: {}
+        userInfo: {}, // 用户信息
+        roles: [] // 用户的角色信息，用于路由权限控制
     },
-    getters: {},
+    getters: {
+        roles: state => state.roles,
+        hasRoles: state => state.roles && state.roles.length > 0
+    },
     mutations: {
         [SET_USER_INFO] (state, v) {
             const obj = state
@@ -15,6 +19,9 @@ const user = {
         [REMOVE_USER_INFO] (state) {
             const obj = state
             obj.userInfo = {}
+        },
+        setRoles: (state, roles) => {
+            state.roles = roles
         }
     },
     actions: {
@@ -25,6 +32,7 @@ const user = {
                     if (response.code === '000') {
                         const { data } = response
                         commit('SET_USER_INFO', data)
+                        commit('setRoles', data.roles)
                         resolve(data)
                     } else {
                         reject(response.message)

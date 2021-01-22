@@ -64,9 +64,12 @@ export default {
                 account: this.account,
                 pwd: this.pwd
             }
-            this.$store.dispatch('login', params).then((val) => {
+            this.$store.dispatch('login', params).then(val => {
                 this.$message.success('登录成功！')
-                val && this.$router.push('home')
+                console.log('$route.query.redirect：', this.$route.query.redirect)
+                val && this.$router.push({
+                    path: this.$route.query.redirect || '/'
+                })
             }).catch(err => {
                 console.log('登录错误: ', err)
             })

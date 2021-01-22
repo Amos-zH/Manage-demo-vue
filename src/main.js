@@ -9,6 +9,7 @@ import '@/assets/svgIcons' // svg icon文件
 import './plugins/veeValidate' // 引入vee-validate验证
 // import 'element-ui/lib/theme-chalk/index.css'
 import api from './api' // 引入接口
+import './router/routePermission'
 
 Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示
 

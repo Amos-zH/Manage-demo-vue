@@ -3,7 +3,8 @@
     "data": {
         "name": "斋藤一",
         "sex": 1,
-        "age": 18
+        "age": 18,
+        "roles": ["admin"]
     },
     "message": "suc"
 }

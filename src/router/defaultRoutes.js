@@ -1,21 +1,23 @@
-const routes = [
+// 通用页面：不需要守卫，可直接访问
+const defaultRoutes = [
     {
         path: '/',
         redirect: 'home'
-    }, {
-        path: '/welcome',
-        name: 'welcome',
-        // route level code-splitting
-        // this generates a separate chunk (welcome.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "welcome" */ '@/views/welcome/index')
+    // }, {
+    //     path: '/welcome',
+    //     name: 'welcome',
+    //     component: () => import(/* webpackChunkName: "welcome" */ '@/views/welcome/index')
     }, {
         path: '*',
-        name: '404',
+        // redirect: '/404',
+        name: 'Error404',
         component: () => import(/* webpackChunkName: "404" */ '@/views/error-page/index')
     }, {
         path: '/login',
         name: 'login',
+        // route level code-splitting
+        // this generates a separate chunk (welcome.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "login" */ '@/views/login/index')
     }, {
         path: '/layout',
@@ -28,13 +30,13 @@ const routes = [
             meta: {
                 title: '首页'
             }
-        }, {
-            path: '/document',
-            name: 'document',
-            component: () => import(/* webpackChunkName: "document" */ '@/views/document/index'),
-            meta: {
-                title: '文档'
-            }
+        // }, {
+        //     path: '/document',
+        //     name: 'document',
+        //     component: () => import(/* webpackChunkName: "document" */ '@/views/document/index'),
+        //     meta: {
+        //         title: '文档'
+        //     }
         }, {
             path: '/svgIcons',
             name: 'svgIcons',
@@ -74,4 +76,4 @@ const routes = [
     }
 ]
 
-export default routes
+export default defaultRoutes
