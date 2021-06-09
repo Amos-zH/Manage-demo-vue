@@ -51,14 +51,6 @@ export default {
             return this.$confirm(`确定移除${file.name}？`)
         },
         beforeUpload (file) {
-            const AppInfoParser = require('app-info-parser')
-            const parser = new AppInfoParser(file)
-            parser.parse().then(result => {
-                console.log('app info ----> ', result)
-                console.log('icon base64 ----> ', result.icon)
-            }).catch(err => {
-                console.log('err ----> ', err)
-            })
             return false
         }
     }
