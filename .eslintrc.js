@@ -13,7 +13,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // 自定义
-    'indent': ['error', 4],
+    'indent': ['error', 2],
     'space-infix-ops': 'error', // 要求操作符周围有空格
     'comma-spacing': 'error', // 逗号后面加空格
     'arrow-spacing': 'error', // 使用 => 前后空格

@@ -19,7 +19,7 @@ Vue.use(ElementUI, { size: 'small' })
 Vue.prototype.$apis = api
 
 new Vue({
-    router,
-    store,
-    render: h => h(App)
+  router,
+  store,
+  render: h => h(App)
 }).$mount('#app')

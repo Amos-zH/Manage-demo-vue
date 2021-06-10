@@ -4,10 +4,10 @@ import cn from 'vee-validate/dist/locale/zh_CN' // 导入这些规则的默认�
 
 // 配置vee-validate
 configure({
-    classes: {
-        valid: 'is-valid', // one class
-        invalid: 'is-invalid' // multiple classes
-    }
+  classes: {
+    valid: 'is-valid', // one class
+    invalid: 'is-invalid' // multiple classes
+  }
 })
 
 // 导入所有内置的校验规则
@@ -38,42 +38,42 @@ required_if     仅当目标字段（第一个参数）设置为指定值之一�
 size            添加到验证字段的文件大小不得超过指定的大小（以KB为单位）
 */
 for (const rule in rules) {
-    extend(rule, {
-        ...rules[rule], // add the rule
-        message: cn.messages[rule] // add its message
-    })
+  extend(rule, {
+    ...rules[rule], // add the rule
+    message: cn.messages[rule] // add its message
+  })
 }
 
 // {_field_} 这是字段名称，{_value_} 这是字段值，{_rule_} 这是规则名称
 
 // 自定义内置的校验规则错误消息
 extend('required', {
-    validate: value => !!value, // the validation function
-    message: '{_field_}不能为空' // the error message
+  validate: value => !!value, // the validation function
+  message: '{_field_}不能为空' // the error message
 })
 extend('confirmed', { // 修改内置confirmed规则支持多传一个参数表明目标字段名，错误文案也修改
-    validate (value, args) {
-        return String(value) === String(args.targetValue)
+  validate (value, args) {
+    return String(value) === String(args.targetValue)
+  },
+  params: [
+    {
+      name: 'targetValue',
+      isTarget: true
     },
-    params: [
-        {
-            name: 'targetValue',
-            isTarget: true
-        },
-        {
-            name: 'targetName'
-        }
-    ],
-    message: (fieldName, placeholders) => {
-        const errorTxt = placeholders.targetName ? `${fieldName} 与 ${placeholders.targetName} 不一致` : `${fieldName} 不能和 ${placeholders.targetValue} 匹配`
-        return errorTxt
+    {
+      name: 'targetName'
     }
+  ],
+  message: (fieldName, placeholders) => {
+    const errorTxt = placeholders.targetName ? `${fieldName} 与 ${placeholders.targetName} 不一致` : `${fieldName} 不能和 ${placeholders.targetValue} 匹配`
+    return errorTxt
+  }
 })
 
 // 自定义规则
 extend('noCN', { // 不能包含中文
-    validate: value => {
-        return !/[\u4e00-\u9fa5]/.test(value)
-    },
-    message: '{_field_}不能包含中文字符'
+  validate: value => {
+    return !/[\u4e00-\u9fa5]/.test(value)
+  },
+  message: '{_field_}不能包含中文字符'
 })

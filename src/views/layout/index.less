@@ -1,59 +1,65 @@
 .layout {
-    height: 100%;
-    .header {
-        height: 60px;
-        line-height: 60px;
-        background: #2b2f3a;
-        padding: 0 20px;
-        .header-box {
-            display: inline-block;
-            width: 180px;
-            vertical-align: top;
-            height: 60px;
-            .header-title {
-                color: #fff;
-                font-size: 18px;
-                font-weight: bold;
-            }
-        }
-        .collapse {
-            color: #fff;
-            font-size: 20px;
-            line-height: 60px;
-            margin-right: 60px;
-        }
-        .header-menu {
-            display: inline-block;
-            vertical-align: top;
-        }
-        .header-info {
-            float: right;
-            .head-img {
-                width: 40px;
-                height: 40px;
-                vertical-align: middle;
-                border-radius: 50%;
-                margin-right: 10px;
-            }
-            .header-username {
-                font-size: 16px;
-                color: #fff;
-                vertical-align: middle;
-            }
-        }
+  height: 100%;
+  .header {
+    height: 60px;
+    line-height: 60px;
+    background: #2b2f3a;
+    padding: 0 20px;
+    .header-box {
+      display: inline-block;
+      width: 180px;
+      vertical-align: top;
+      height: 60px;
+      .header-title {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+      }
     }
-    .container {
-        height: 100px;
-        .aside {
-            overflow: auto;
-            background: #304156;
-            transition: all 0.5s;
-        }
-        .aside-menu {
-            border-right: none;
-        }
-        .main {
-            height: 99%;
-        }
+    .header-menu {
+      display: inline-block;
+      vertical-align: top;
     }
+    .header-info {
+      float: right;
+      .head-img {
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .header-username {
+        font-size: 16px;
+        color: #fff;
+        vertical-align: middle;
+      }
+    }
+  }
+  .container {
+    height: 100px;
+    .aside {
+      overflow: auto;
+      background: #304156;
+      transition: all 0.5s;
+      position: relative;
+    }
+    .aside-menu {
+      border-right: none;
+      height: calc(100% - 60px);
+      overflow: auto;
+    }
+    .main {
+      height: 99%;
+    }
+  }
+  .aside-collapse {
+    color: #fff;
+    font-size: 20px;
+    line-height: 60px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+  }
 }

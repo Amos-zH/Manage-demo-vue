@@ -1,5 +1,3 @@
 <template>
-    <div>
-        富文本
-    </div>
+  <div>富文本</div>
 </template>
