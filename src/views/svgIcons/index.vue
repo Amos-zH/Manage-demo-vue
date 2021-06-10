@@ -1,6 +1,6 @@
 <template>
   <div class="svg-icons">
-    <div class="flex">
+    <div class="grid">
       <div class="box-svg" v-for="item in svgs" :key="item">
         <div class="center">
           <svg-icon class="svg" :svg-name="item" />
@@ -45,12 +45,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.flex {
+.grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  // flex-wrap: wrap;
-  // justify-content: space-around;
-  // align-items: center;
+  grid-template-columns: repeat(auto-fill, 120px);
+  grid-gap: 10px;
+  place-items: center;
+  place-content: center;
 }
 .center {
   position: absolute;
@@ -74,6 +74,11 @@ export default {
     .svg-name {
       font-size: 14px;
       color: @color-primary;
+      height: 40px;
+      line-height: 1.5;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-wrap: break-word;
     }
   }
 }
