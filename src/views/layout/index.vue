@@ -12,7 +12,7 @@
         @select="handleSelect"
         background-color="#2b2f3a"
         text-color="#fff"
-        active-text-color="#409EFF"
+        active-text-color="#2A6AFF"
       >
         <el-menu-item index="1">后台中心</el-menu-item>
         <el-menu-item index="2">数据图表</el-menu-item>
@@ -50,7 +50,7 @@
             :default-active="activeMenu"
             :collapse="isCollapse"
             text-color="#fff"
-            active-text-color="#ff9234"
+            active-text-color="#2A6AFF"
             background-color="#304156"
             @select="changeMenu"
           >
@@ -61,7 +61,7 @@
                 :index="item.menuPath"
               >
                 <template slot="title">
-                  <i :class="item.icon" />
+                  <svg-icon class="menu-svg" :svg-name="item.menuPath === activeMenu ? 'gameManagement-on' : 'gameManagement-off'" />
                   <span slot="title">{{ item.menuName }}</span>
                 </template>
                 <el-menu-item
@@ -69,11 +69,12 @@
                   :key="childItem.menuId"
                   :index="childItem.menuPath"
                 >
+                  <svg-icon class="menu-svg" :svg-name="childItem.menuPath === activeMenu ? 'gameManagement-on' : 'gameManagement-off'" />
                   {{ childItem.menuName }}
                 </el-menu-item>
               </el-submenu>
               <el-menu-item v-else :key="item.menuId" :index="item.menuPath">
-                <i :class="item.icon" />
+                <svg-icon class="menu-svg" :svg-name="item.menuPath === activeMenu ? 'gameManagement-on' : 'gameManagement-off'" />
                 <span slot="title">{{ item.menuName }}</span>
               </el-menu-item>
             </template>
@@ -114,11 +115,13 @@ import adminIcon from '@image/head.JPG'
 import headImg from '@image/pkq.jpg'
 import { removeToken } from '@/utils/auth'
 import dialogChangePwd from './child/dialogChangePwd'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'Layout',
   components: {
-    dialogChangePwd
+    dialogChangePwd,
+    SvgIcon
   },
   created () {
     this.initMenu()

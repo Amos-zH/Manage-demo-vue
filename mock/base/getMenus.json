@@ -4,8 +4,7 @@
         {
             "menuId": 0,
             "menuName": "首页",
-            "menuPath": "home",
-            "icon": "el-icon-setting"
+            "menuPath": "home"
         }, {
             "menuId": 1,
             "menuName": "文档",
@@ -15,7 +14,7 @@
             "menuId": 2,
             "menuName": "图标",
             "menuPath": "icon",
-            "icon": "el-icon-setting",
+            "icon": "",
             "subMenu": [
                 {
                     "menuId": 21,
